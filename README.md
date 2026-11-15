@@ -2,6 +2,10 @@
 
 A command-line game store application built with Python and MySQL. It supports browsing and searching a game catalogue, recording purchases, updating inventory, and viewing customer and sales records.
 
+![Game Store MySQL schema](assets/database-schema.svg)
+
+*Schema diagram derived from `schema.sql`; it documents the intended database structure and is not a screenshot of a live database.*
+
 ## Features
 
 - View available games, prices and stock
@@ -25,6 +29,7 @@ A command-line game store application built with Python and MySQL. It supports b
 - `schema.sql` — database and table definitions, plus optional sample games
 - `.env.example` — example database environment variables
 - `requirements.txt` — Python dependency
+- `assets/database-schema.svg` — ER diagram
 
 ## Setup
 
@@ -82,6 +87,6 @@ python game_store.py
 
 ## Scope and limitations
 
-This is a local, terminal-based learning project. It does not include a graphical interface, user authentication, payment processing, an online storefront, or production deployment. Use test data during demonstrations.
+This is a local, terminal-based learning project. It does not include a graphical interface, user authentication, payment processing, an online storefront, or production deployment. The application has not been integration-tested against a live MySQL server; test the schema and purchase workflow locally before presenting it as a verified working application.
 
 The originally uploaded scripts contained a hard-coded database password and a variable-name error in one file. This version removes embedded credentials and consolidates the flow into one maintainable application.
