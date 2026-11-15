@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<rect width="1200" height="650" fill="#fbfaf7"/>
+<text x="60" y="60" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#1d2933">Game Store — database schema</text>
+<text x="60" y="91" font-family="Arial,sans-serif" font-size="15" fill="#59636e">Three MySQL tables · InnoDB · foreign-key relationships</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6" fill="none" stroke="#63717b" stroke-width="1.4"/></marker></defs>
+<g stroke="#63717b" stroke-width="2" fill="none" marker-end="url(#arrow)">
+<path d="M400 275 C470 275 480 225 560 225"/>
+<path d="M400 360 C470 360 480 420 560 420"/>
+</g>
+<g>
+<rect x="70" y="170" width="330" height="280" rx="14" fill="#fff" stroke="#347b91" stroke-width="2"/>
+<path d="M70 184 Q70 170 84 170 H386 Q400 170 400 184 V218 H70Z" fill="#347b91"/>
+<text x="96" y="202" font-family="Arial" font-size="20" font-weight="700" fill="#fff">games</text>
+<g font-family="Arial" font-size="15" fill="#25313b">
+<text x="96" y="252">🔑 game_id  INT AUTO_INCREMENT</text>
+<text x="96" y="288">name  VARCHAR(150)</text>
+<text x="96" y="324">genre  VARCHAR(80)</text>
+<text x="96" y="360">platform  VARCHAR(80)</text>
+<text x="96" y="396">price  DECIMAL(10,2)</text>
+<text x="96" y="432">stock  INT</text>
+</g>
+<rect x="560" y="120" width="360" height="240" rx="14" fill="#fff" stroke="#37866a" stroke-width="2"/>
+<path d="M560 134 Q560 120 574 120 H906 Q920 120 920 134 V168 H560Z" fill="#37866a"/>
+<text x="588" y="152" font-family="Arial" font-size="20" font-weight="700" fill="#fff">customers</text>
+<g font-family="Arial" font-size="15" fill="#25313b">
+<text x="588" y="208">🔑 customer_id  INT AUTO_INCREMENT</text>
+<text x="588" y="246">name  VARCHAR(150)</text>
+<text x="588" y="284">email  VARCHAR(254)</text>
+<text x="588" y="322">phone  VARCHAR(40)</text>
+</g>
+<rect x="560" y="390" width="540" height="220" rx="14" fill="#fff" stroke="#c88835" stroke-width="2"/>
+<path d="M560 404 Q560 390 574 390 H1086 Q1100 390 1100 404 V438 H560Z" fill="#c88835"/>
+<text x="588" y="422" font-family="Arial" font-size="20" font-weight="700" fill="#fff">sales</text>
+<g font-family="Arial" font-size="15" fill="#25313b">
+<text x="588" y="478">🔑 sale_id  INT AUTO_INCREMENT</text>
+<text x="588" y="514">customer_id  INT  → customers.customer_id</text>
+<text x="588" y="550">game_id  INT  → games.game_id</text>
+<text x="588" y="586">quantity · total_price · sale_date</text>
+</g>
+</g>
+<text x="70" y="520" font-family="Arial,sans-serif" font-size="14" fill="#59636e">Foreign keys ensure each sale references an existing</text>
+<text x="70" y="543" font-family="Arial,sans-serif" font-size="14" fill="#59636e">customer and game. Purchase updates are transactional.</text>
+<text x="70" y="615" font-family="Arial,sans-serif" font-size="12" fill="#69737d">Derived from schema.sql in this repository. Diagram documents the intended schema; it is not a live database screenshot.</text>
+</svg>
